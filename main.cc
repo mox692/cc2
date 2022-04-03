@@ -5,8 +5,9 @@
 using namespace cc2;
 using namespace std;
 
-int main(int argc, char** argv) {
-    char *input = get_input(argc, argv);
+int main(int argc, const char **argv)
+{
+    const char *input = get_input(argc, argv);
     printf("input is %s\n", input);
 
     vector<Token> tokens = tokenize(input);

@@ -2,7 +2,7 @@
 
 namespace cc2
 {
-    std::vector<Token> tokenize(char *input)
+    std::vector<Token> tokenize(const char *input)
     {
         Lexer *lex = new Lexer(input);
         std::vector<Token> tok = lex->tokenize();

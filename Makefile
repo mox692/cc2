@@ -14,7 +14,8 @@ install:
 
 test:;
 	./unit_test.sh
-	./integration_test.sh
+# TODO:
+# ./integration_test.sh
 
 c:;
 	rm *.o $(TARGET) *_test

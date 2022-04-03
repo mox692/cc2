@@ -19,19 +19,19 @@ namespace cc2
     {
         Token();
     };
-    std::vector<Token> tokenize(char *);
+    std::vector<Token> tokenize(const char *);
 
     class Lexer
     {
     public:
-        Lexer(char *input) : _input(input), _pos(0), _token_vec({})
+        Lexer(const char *input) : _input(input), _pos(0), _token_vec({})
         {
         }
         std::vector<Token> tokenize();
         char cur_char() const;
 
     private:
-        char *_input;
+        const char *_input;
         int _pos;
         std::vector<Token> _token_vec;
     };
@@ -44,12 +44,18 @@ namespace cc2
 
     void code_gen(std::vector<Node>);
 
-    inline char *get_input(int argc, char **argv)
+    inline const char *get_input(int argc, const char **argv)
     {
         if (argc < 2)
         {
             PANIC("invalid input, argc: %d", argc);
         }
+
+        // check that input has EOF.
+        for (const char *pos = argv[1]; *pos != '\0'; pos = pos + 1)
+        {
+        }
+
         return argv[1];
     }
 
