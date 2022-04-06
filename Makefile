@@ -12,6 +12,9 @@ $(TARGET): $(OBJS)
 install:
 	cd cctest && make install
 
+update_submodule:
+	git submodule update --remote
+
 test:;
 	./unit_test.sh
 # TODO:
